@@ -7,7 +7,6 @@ Last update: 2025-10-06
 Note:
     to test this one you need a MISTRAL API KEY
 """
-import os
 import base64
 from langchain_core.messages import HumanMessage
 from langchain_mistralai import ChatMistralAI
@@ -29,12 +28,13 @@ def encode_image(image_path):
 
 def get_llm():
     """
-    Initialize and return an instance of ChatOCIGenAI with the specified configuration.
+    Initialize and return an instance of Pixtral with the specified configuration.
 
     Returns:
         ChatOCIGenAI: An instance of the OCI GenAI language model.
     """
     _llm = ChatMistralAI(
+        api_key=MISTRAL_API_KEY,
         model="pixtral-12b-2409",
         temperature=TEMPERATURE,
         max_tokens=MAX_TOKENS,
@@ -67,8 +67,6 @@ def print_stream(_ai_response):
 #
 DO_STREAM = True
 IMG_FILE_NAME = "IMG01.jpg"
-
-os.environ["MISTRAL_API_KEY"] = MISTRAL_API_KEY
 
 llm = get_llm()
 
