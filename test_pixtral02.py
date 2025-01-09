@@ -1,21 +1,21 @@
 """
-Invoke the OCI GenAI language model with a multimodal input (text and image) and print the response.
+Invoke the Pixtral language model with a multimodal input (text and image) and print the response.
 
 Author: L. Saetta
 Last update: 2025-10-06
-"""
 
+Note:
+    to test this one you need a MISTRAL API KEY
+"""
+import os
 import base64
 from langchain_core.messages import HumanMessage
-from langchain_community.chat_models import ChatOCIGenAI
+from langchain_mistralai import ChatMistralAI
 
 from config import (
-    MODEL_ID,
-    AUTH,
-    SERVICE_ENDPOINT,
+    MISTRAL_API_KEY,
     MAX_TOKENS,
     TEMPERATURE,
-    COMPARTMENT_ID,
 )
 
 
@@ -34,13 +34,10 @@ def get_llm():
     Returns:
         ChatOCIGenAI: An instance of the OCI GenAI language model.
     """
-    _llm = ChatOCIGenAI(
-        auth_type=AUTH,
-        model_id=MODEL_ID,
-        service_endpoint=SERVICE_ENDPOINT,
-        compartment_id=COMPARTMENT_ID,
-        is_stream=True,
-        model_kwargs={"temperature": TEMPERATURE, "max_tokens": MAX_TOKENS},
+    _llm = ChatMistralAI(
+        model="pixtral-12b-2409",
+        temperature=TEMPERATURE,
+        max_tokens=MAX_TOKENS,
     )
     return _llm
 
@@ -70,6 +67,8 @@ def print_stream(_ai_response):
 #
 DO_STREAM = True
 IMG_FILE_NAME = "IMG01.jpg"
+
+os.environ["MISTRAL_API_KEY"] = MISTRAL_API_KEY
 
 llm = get_llm()
 
