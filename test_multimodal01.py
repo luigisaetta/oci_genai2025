@@ -10,6 +10,7 @@ from langchain_core.messages import HumanMessage
 from langchain_community.chat_models import ChatOCIGenAI
 
 from config import (
+    # here MODEL_ID must be: "meta.llama-3.2-90b-vision-instruct"
     MODEL_ID,
     AUTH,
     SERVICE_ENDPOINT,
