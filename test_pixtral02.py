@@ -7,6 +7,7 @@ Last update: 2025-10-06
 Note:
     to test this one you need a MISTRAL API KEY
 """
+
 import base64
 from langchain_core.messages import HumanMessage
 from langchain_mistralai import ChatMistralAI
