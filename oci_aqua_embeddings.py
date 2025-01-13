@@ -23,14 +23,15 @@ class OCIAquaEmbeddings(Embeddings):
     Wrap an embedding model deployed in OCI Aqua in LangChain
     """
 
-    def __init__(self, endpoint: str, **kwargs):
+    def __init__(self, endpoint: str, auth_type: str = "api_key", **kwargs):
         """
         Initialize the embedding model.
         :param endpoint: the model deployment endpoint.
+        :param auth_type: the authentication type (api_key or resource_principal).
         :param kwargs: Additional parameters for the model initialization.
         """
-        # Auth
-        set_auth(auth="api_key", oci_config_location="~/.oci/config", profile="DEFAULT")
+        # Auth, for now implemented using ADS
+        set_auth(auth=auth_type)
         self.auth = default_signer()["signer"]
 
         self.endpoint = endpoint
