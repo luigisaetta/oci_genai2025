@@ -1,13 +1,13 @@
 # OCI Generative AI 2025
-This repository will contains  a set of examples and prototypes for **new things** we can do with LLM
+This repository will contains  a set of examples and prototypes for **new things** we can do with LLM/Generative AI
 
 ## Features and demos
-* Invoke a [multi-modal model in OCI](https://github.com/luigisaetta/oci_genai2025/blob/main/test_multimodal01.py) using Langchain.
-* [Embeddings Model in AI Quick Actions](https://github.com/luigisaetta/oci_genai2025/blob/main/oci_aqua_embeddings.py), using Langchain.
+* Invoke a [multi-modal model in OCI](./test_multimodal01.py) using LangChain.
+* [Embeddings Model in AI Quick Actions](./oci_aqua_embeddings.py), using LangChain.
 
 
 ## Configuration
-Create a file **config.py** starting from the [template](https://github.com/luigisaetta/oci_genai2025/blob/main/config_template.py) provided.
+Create a file **config.py** starting from the [template](./config_template.py) provided.
 
 You need to put your COMPARTMENT OCID.
 
