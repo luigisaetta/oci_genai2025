@@ -3,6 +3,7 @@ This repository will contains  a set of examples and prototypes for **new things
 
 ## Features and demos
 * Invoke a [multi-modal model in OCI](https://github.com/luigisaetta/oci_genai2025/blob/main/test_multimodal01.py) using Langchain.
+* [Embeddings Model in AI Quick Actions](https://github.com/luigisaetta/oci_genai2025/blob/main/oci_aqua_embeddings.py), using Langchain.
 
 
 ## Configuration
