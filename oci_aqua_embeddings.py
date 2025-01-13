@@ -31,6 +31,8 @@ class OCIAquaEmbeddings(Embeddings):
         :param kwargs: Additional parameters for the model initialization.
         """
         # Auth, for now implemented using ADS
+        # to avoid mistakes, we force lowercase
+        auth_type = auth_type.lower()
         set_auth(auth=auth_type)
         self.auth = default_signer()["signer"]
 

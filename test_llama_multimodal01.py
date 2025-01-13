@@ -1,5 +1,6 @@
 """
 Invoke the OCI GenAI language model with a multimodal input (text and image) and print the response.
+The model used is the "meta.llama-3.2-90b-vision-instruct" model.
 
 Author: L. Saetta
 Last update: 2025-10-06
